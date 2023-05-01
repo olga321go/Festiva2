@@ -1,7 +1,9 @@
 <h1>ALL FESTIVALS</h1>
 {{#each allFestivals}}
-    {{name}}
-    {{location}}
-    {{ticketPrice}}
-    {{info}}
+<h3>{{name}}</h3>
+    <ul>
+        <li>{{info}}</li>
+    </ul>
+<a href="/festival/{{_id}}" id="">SEE MORE</a>
+
 {{/each}} 

@@ -45,7 +45,7 @@ router.get("/festival/festival-list", async (req, res, next) => {
     const festivalToEdit = await FestivalModel.findById(festivalID);
     // const allArtists = await ArtistModel.find(); this is to be added later if we have artists
   
-    res.render("festival/festivsl-edit", { festivalToEdit } );
+    res.render("festival/festival-edit", { festivalToEdit } );
   });
 
   //route to receive edit festival form and update the movie
