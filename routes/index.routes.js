@@ -10,7 +10,7 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/profile", (req, res) => {
+router.get("/profile", isLoggedIn, (req, res) => {
   console.log(req.session.user);
   res.render("auth/profile", { user: req.session.user });
 });

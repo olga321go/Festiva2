@@ -2,9 +2,10 @@ const express = require("express");
 const router = express.Router();
 const UserModel = require("../models/User.model");
 const bcryptjs = require("bcryptjs");
+const isLoggedOut = require("../middlewares/isLoggedOut");
 
 // Route for Signup
-router.get("/signup", (req, res, next) => {
+router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
 });
 
@@ -30,8 +31,19 @@ router.post("/signup", async (req, res, next) => {
   }
 });
 
+//Route for Logout
+router.post("/logout", (req, res, next) => {
+  req.session.destroy((err) => {
+    if (err) {
+      next(err);
+      return;
+    }
+    res.redirect("/login");
+  });
+});
+
 //Route for Login
-router.get("/login", (req, res, next) => {
+router.get("/login", isLoggedOut, (req, res, next) => {
   res.render("auth/login");
 });
 
