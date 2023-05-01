@@ -40,22 +40,31 @@ router.get("/festival/festival-list", async (req, res, next) => {
 
   router.get("/festival/:festivalID/edit", async(req,res) => {
 
+    //later, if we add artists, we have to add here .populate("lineup")
     const { festivalID } = req.params;
-    const movieToEdit = await MovieModel.findById(movieID).populate("cast");
-    const allCelebs = await CelebModel.find();
+    const festivalToEdit = await FestivalModel.findById(festivalID);
+    // const allArtists = await ArtistModel.find(); this is to be added later if we have artists
   
-    res.render("movies/edit-movie", { movieToEdit, allCelebs} );
+    res.render("festival/festivsl-edit", { festivalToEdit } );
   });
 
-  router.post("/:movieID/delete", async (req, res) => {
+  //route to receive edit festival form and update the movie
+  router.post("/festival/:festivalID", async(req,res) => {
+    const { festivalID } = req.params;
+    const updatedFestivsl = await FestivalModel.findByIdAndUpdate( { _id: festivalID }, req.body);
+    res.redirect(`/festival/${festivalID}`);
+  });
+
+  // route to delete a festival
+  router.post("/festival/:festivalID/delete", async (req, res) => {
     try {
   
-      const { movieID } = req.params;
-      await MovieModel.findByIdAndDelete(movieID);
-      res.redirect("/movies/movieslist");
+      const { festivalID } = req.params;
+      await FestivalModel.findByIdAndDelete(festivalID);
+      res.redirect("/festival/festival-list");
     
     } catch (err) {
-      console.log("movie post error", err);
+      console.log("festival delete post error", err);
       res.send ("Oops, problem while deleting, try again.");
     }
   });
