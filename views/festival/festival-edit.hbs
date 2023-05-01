@@ -1,0 +1,30 @@
+<div class="">
+  <h2>EDIT A FESTIVAL</h2>
+  <form action="/festival/{{festivalToEdit._id}}" method="post">
+  <label>Name:
+    <input type="text" name="name" value="{{festivalToEdit.name}}"/>
+  </label><br>
+  <label>Location:
+    <input type="text" name="location" value="{{festivalToEdit.location}}"/>
+  </label><br>
+  <label>Ticket price:
+    <input type="text" name="ticketPrice" value="{{festivalToEdit.ticketPrice}}"/>
+  </label><br>
+  <label>Info:
+    <input type="text" name="info" value="{{festivalToEdit.info}}" />
+  </label><br>
+  <label>Lineup:
+   {{!-- <select name="lineup" multiple>
+    
+    {{#each allArtists}}
+    
+      <option value="{{_id}}">{{name}}</option>
+    </label>
+      
+    {{/each}}
+  </select><br><br> --}}
+
+  <button type="submit" class="">Edit this festival</button>
+  </form>
+
+</div>

@@ -1,0 +1,14 @@
+<h1>{{currentFestival.name}}</h1>
+<h3>{{currentFestival.location}}</h3>
+<h3>{{currentFestival.ticketPrice}}</h3>
+<h4>{{currentFestival.info}}</h4>
+
+<div id="delete-edit-buttons">
+      <form action="/festival/{{currentFestival._id}}/delete" method="post">
+            <button type="submit" class="">DELETE THIS FESTIVAL</button>
+      </form>
+      <a href="/festival/{{currentFestival._id}}/edit">
+            <button class="">EDIT THIS FESTIVAL</button>
+      </a>
+  </div>
+
