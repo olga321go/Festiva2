@@ -1,12 +1,39 @@
+/* color scheme
+dark orange: #E27D60
+light blue: #85DCB
+light orange: #E8A87C
+pale purple: #C38D9E
+green: #41B3A3 */
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00b7ff;
+  text-decoration: none;
 }
 
 h1 {
   color: 15px;
+}
+
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#logo-and-name {
+  display: flex;
+}
+
+#logo-and-name img {
+  height: 40px;
+}
+
+#links-navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
