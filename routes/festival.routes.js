@@ -1,6 +1,7 @@
 const express = require("express");
 const FestivalModel = require("../models/Festival.model");
 const router = express.Router();
+const isLoggedIn = require("../middlewares/isLoggedIn");
 
 //route to list with all festivals
 router.get("/festival/festival-list", async (req, res, next) => {
@@ -13,12 +14,12 @@ router.get("/festival/festival-list", async (req, res, next) => {
 });
 
 //routes to create a festival
-router.get("/festival/create", (req, res) => {
+router.get("/festival/create", isLoggedIn, (req, res) => {
   res.render("festival/festival-create");
 });
 
 //post route for the form to create a festival
-router.post("/festival/create", async (req, res) => {
+router.post("/festival/create", isLoggedIn, async (req, res) => {
   try {
     const newFestival = await FestivalModel.create(req.body);
     console.log("NEW FESTIVAL", newFestival);
@@ -37,7 +38,7 @@ router.get("/festival/:festivalID", async (req, res) => {
   res.render("festival/festival-detail", { currentFestival });
 });
 
-router.get("/festival/:festivalID/edit", async (req, res) => {
+router.get("/festival/:festivalID/edit", isLoggedIn, async (req, res) => {
   //later, if we add artists, we have to add here .populate("lineup")
   const { festivalID } = req.params;
   const festivalToEdit = await FestivalModel.findById(festivalID);
@@ -47,7 +48,7 @@ router.get("/festival/:festivalID/edit", async (req, res) => {
 });
 
 //route to receive edit festival form and update the movie
-router.post("/festival/:festivalID", async (req, res) => {
+router.post("/festival/:festivalID", isLoggedIn, async (req, res) => {
   const { festivalID } = req.params;
   const updatedFestivsl = await FestivalModel.findByIdAndUpdate(
     { _id: festivalID },
@@ -57,7 +58,7 @@ router.post("/festival/:festivalID", async (req, res) => {
 });
 
 // route to delete a festival
-router.post("/festival/:festivalID/delete", async (req, res) => {
+router.post("/festival/:festivalID/delete", isLoggedIn, async (req, res) => {
   try {
     const { festivalID } = req.params;
     await FestivalModel.findByIdAndDelete(festivalID);
