@@ -13,6 +13,8 @@ const festivalSchema = new Schema(
       required: true,
     },
 
+    date: Date,
+
     ticketPrice: Number,
 
     info: {
