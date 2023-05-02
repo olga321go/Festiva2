@@ -1,8 +1,12 @@
 /* color scheme
-dark orange: #E27D60
-light blue: #85DCB
-light orange: #E8A87C
-pale purple: #C38D9E
+lightest blue: #6F968E
+darker blue: #127581
+yet darker: #0E5D79
+navy: #122545
+light sand: #E4D3AF
+darker sand: #D7A370
+orange: #D07245
+dark orange: #BE4731
 green: #41B3A3 */
 
 body {
@@ -37,4 +41,14 @@ h1 {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.basic-container {
+  width: 500px;
+  margin: 100px auto;
+  
+}
+
+#index-page-content {
+  text-align: center;
 }
