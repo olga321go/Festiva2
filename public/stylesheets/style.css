@@ -1,21 +1,31 @@
-/* color scheme
-dark orange: #E27D60
-light blue: #85DCB
-light orange: #E8A87C
-pale purple: #C38D9E
-green: #41B3A3 */
+/* /* color scheme
+light gray:#DFDFDF
+dark gray: #31333B
+neon green:#ADEB68
+blue: #182ABB */
 
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  /* background-color: #DFDFDF; */
+  color: #31333B;
+
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color:#DFDFDF;
+}
+
+a:hover {
+  color: #ADEB68;
 }
 
 h1 {
-  color: 15px;
+  font-size: 50px;
 }
 
 #nav-bar {
@@ -23,18 +33,93 @@ h1 {
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
+  background-color: #31333B;
+  height: 80px;
+  border-bottom: #ADEB68 5px solid;
 }
 
 #logo-and-name {
   display: flex;
+  align-items: center;
+  
 }
 
-#logo-and-name img {
-  height: 40px;
+#logo-and-name h4 {
+  color: #DFDFDF;
+  font-size: 20px;
+
 }
 
 #links-navbar {
   display: flex;
   align-items: center;
   gap: 10px;
+  font-size: 18px;
 }
+
+.basic-container {
+  /* width: 500px;
+  margin: 100px auto; */
+  display: flex;
+  /* max-width: 500px; */
+  /* align-self: center; */
+  padding: 50px 100px;
+  gap: 50px;
+}
+
+#index-page-content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+
+#index-text-and-button p{
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.basic-btn {
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    min-height: 20px;
+    height: 4vw;
+    max-height: 40px;
+    width: auto;
+    font-weight: 700;
+    font-size: 18px;
+    color:#DFDFDF;
+    letter-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    border-width: 0px;
+    transition: transform 0.1s ease 0s;
+    background-color: rgb(48, 49, 55);
+    color: rgb(255, 255, 255);
+    padding: 5px 20px;
+  }
+  
+  .basic-btn:hover {
+    background-color: #1a1919;
+    color: white;
+  }
+
+  #index-page-slides img{
+    width: 700px; 
+  }
+
+  footer {
+    background-color: #31333B;
+    color: #DFDFDF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 20px;
+    border-top: #ADEB68 solid 5px;
+  }
+
