@@ -1,35 +1,38 @@
-<h1>CREATE A NEW FESTIVAL</h1>
-
-<form name="newFestivalForm" class="" action="/festival/create" method="post">
-  <input
+<div class="basic-container" id="create-festival">
+  <h2>CREATE A NEW FESTIVAL</h2>
+  <form name="newFestivalForm" class="" action="/festival/create" method="post">
+    <input
     type="text"
     name="name"
     value=""
     placeholder="Name of the festival"
-  /><br>
-  <input type="text" 
-  name="location" 
-  value="" 
-  placeholder="Location" /><br>
-  {{!-- we need to research this input to make sure it's correct --}}
-  <input
+    /><br>
+    <input type="text" 
+    name="location" 
+    value="" 
+    placeholder="Location" /><br>
+    <input
     type="date"
     name="date"
     value=""
-    placeholder="Enter the date"
-  /><br>
-  <input
+    placeholder="date YYYY-MM-DD"
+    /><br>
+    <input
     type="text"
     name="ticketPrice"
     value=""
-    placeholder="Ticket price (number)"
-  /><br>
-    <input
-    type="text"
+    placeholder="Ticket price" 
+    id="ticket-input"
+    />$<br>
+    <textarea 
+    rows = "7" 
+    cols = "40" 
     name="info"
-    value=""
-    placeholder="Info about the festival"
-  />
-  <br />
-  <button type="submit" class="basic-btn">Create New festival</button>
-</form>
+    placeholder="Info about the festival" 
+    value=""></textarea>
+    <br>
+    <button type="submit" class="basic-btn" id="new-festival-btn">Create New Festival</button>
+  </form>
+</div>
+
+
