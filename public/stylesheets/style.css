@@ -162,6 +162,7 @@ h1 {
   gap: 10px;
   border: #ADEB68 solid 5px;
   border-radius: 5%;
+  max-width: 250px;
 }
 
 #all-festivals-box {
@@ -171,4 +172,17 @@ h1 {
   gap: 40px;
   /* border: yellow solid 2px; */
   justify-content: center;
+}
+
+.festival-card h3 {
+  text-align: center;
+  /* border: solid yellow 1px; */
+}
+
+.festival-card a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: solid yellow 1px;
+
 }
