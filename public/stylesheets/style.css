@@ -211,6 +211,10 @@ h1 {
   height: 35px;
 }
 
+#login-container label {
+  text-align: center;
+}
+
 #login-container a {
   color: #787878;
   padding-top: 20px;

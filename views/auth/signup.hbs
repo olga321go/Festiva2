@@ -1,5 +1,5 @@
 <div id="login-container">
-  <form name="signupForm" class="login-form" action="/signup" method="post">
+  <form name="signupForm" class="login-form" action="/signup" method="post" enctype="multipart/form-data">
     <input
       type="username"
       name="username"
@@ -13,7 +13,14 @@
       value=""
       placeholder="Enter your password"
     />
-    <br />
+    <label>Upload profile photo:
+    <input
+    type="file"
+    name="profilePhoto"
+    value=""
+    placeholder="upload the image"
+    /></label><br>
+    <br>
     <button type="submit" class="basic-btn">Sign up</button>
     <a href="/login"> Already a member? Login here!</a>
   </form>

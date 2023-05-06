@@ -22,7 +22,10 @@ const festivalSchema = new Schema(
       required: true,
     },
 
-    festivalImg: String,
+    festivalImg: {
+      type: String,
+      required: true,
+    },
 
     lineup: [{ type: Schema.Types.ObjectId, ref: "artist" }],
   },

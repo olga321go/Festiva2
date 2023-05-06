@@ -3,13 +3,14 @@ const router = express.Router();
 const UserModel = require("../models/User.model");
 const bcryptjs = require("bcryptjs");
 const isLoggedOut = require("../middlewares/isLoggedOut");
+const fileUploader = require('../config/cloudinary.config');
 
 // Route for Signup
 router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", async (req, res, next) => {
+router.post("/signup", fileUploader.single('profilePhoto'),async (req, res, next) => {
   try {
     const salt = await bcryptjs.genSalt(12);
     console.log(salt);
@@ -21,7 +22,7 @@ router.post("/signup", async (req, res, next) => {
       username: req.body.username,
       email: req.body.email,
       password: hash,
-      profilePhoto: req.body.profilePhoto,
+      profilePhoto: req.file.path,
       eventsCreated: req.body.eventsCreated,
     });
     res.redirect("/profile");

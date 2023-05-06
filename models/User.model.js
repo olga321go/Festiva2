@@ -22,9 +22,9 @@ const userSchema = new Schema(
     },
 
     profilePhoto: {
-      data: Buffer,
-      contentType: String,
-    },
+      type: String,
+      required: true,
+    }, 
 
     eventsCreated: [{ type: Schema.Types.ObjectId, ref: "festival" }],
   },
