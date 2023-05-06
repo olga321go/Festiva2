@@ -1,9 +1,15 @@
-<h1>ALL FESTIVALS</h1>
-{{#each allFestivals}}
-<h3>{{name}}</h3>
-    <ul>
-        <li>{{info}}</li>
-    </ul>
-<a href="/festival/{{_id}}" id="">SEE MORE</a>
+<div class="basic-container all-fest-page">
+    <h2>ALL FESTIVALS</h2>
+    <div id="all-festivals-box">
+            {{#each allFestivals}}
+            <div class="festival-card">
+                <h3>&#129395 {{name}}</h3><br>
+                <p>{{info}}</p><br>
+                <a href="/festival/{{_id}}" id="">SEE MORE</a>
+            </div>
+            {{/each}} 
+        </div> 
 
-{{/each}} 
+    </div>
+    
+</div>
