@@ -202,7 +202,8 @@ footer {
   /* padding-top: 50px; */
 }
 
-#login-container {
+#login-container,
+#edit-page {
   padding: 50px 100px;
   text-align: center;
   /* position: fixed;
@@ -219,7 +220,8 @@ footer {
   /* margin-top: 20px; */
 }
 
-#login-container input {
+#login-container input,
+#edit-page input {
   /* I coded this font for the whole body so it's the same everywhere */
   /* font-family: "Helvetica Neue", Helvetica, sans-serif; */
   font-size: 12px;
@@ -258,6 +260,10 @@ footer {
   max-width: 250px;
 }
 
+.festival-card a {
+  padding-bottom: 10px;
+}
+
 #all-festivals-box {
   display: flex;
   flex-direction: row !important;
@@ -272,7 +278,8 @@ footer {
   height: auto;
 }
 
-.festival-card h3 {
+.festival-card h3,
+.festival-card h5 {
   text-align: center;
   /* border: solid yellow 1px; */
 }
@@ -316,6 +323,14 @@ footer {
       0 0 102px red,
       0 0 151px red;
 }
+
+/* #edit-page {
+  padding: 50px 100px;
+}
+
+#edit-page h2 {
+  text-align: center;
+} */
 
 #profile-page {
   border: #ADEB68 solid 1px;
