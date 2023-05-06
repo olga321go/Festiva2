@@ -26,8 +26,8 @@ const festivalSchema = new Schema(
       type: String,
       required: true,
     },
-
-    lineup: [{ type: Schema.Types.ObjectId, ref: "artist" }],
+     // ref: Reference to model 
+    lineup: [{ type: Schema.Types.ObjectId, ref: "artist" }], 
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

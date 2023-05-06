@@ -23,11 +23,11 @@ const userSchema = new Schema(
 
     profilePhoto: {
       type: String,
-      required: true,
+      required: true, 
     }, 
-
-    eventsCreated: [{ type: Schema.Types.ObjectId, ref: "festival" }],
-  },
+    // ref: Reference to model
+    eventsCreated: [{ type: Schema.Types.ObjectId, ref: "FestivalModel" }], 
+  }, 
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,

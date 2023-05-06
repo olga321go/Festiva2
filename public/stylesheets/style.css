@@ -179,22 +179,24 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 50px;
+  /* padding-top: 50px; */
 }
 
 #login-container {
-  position: fixed;
+  padding: 50px 100px;
+  text-align: center;
+  /* position: fixed;
   width: 340px;
-  height: 280px;
-  top: 50%;
-  left: 50%;
-  margin-top: -140px;
-  margin-left: -170px;
+  height: 280px; */
+  /* top: 50%;
+  left: 50%; */
+  /* margin-top: -140px;
+  margin-left: -170px; */
 }
 
 #login-container form {
   margin: 0 auto;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 #login-container input {
@@ -209,10 +211,6 @@ h1 {
   margin-left: 18px;
   width: 290px;
   height: 35px;
-}
-
-#login-container label {
-  text-align: center;
 }
 
 #login-container a {
@@ -296,5 +294,10 @@ h1 {
       0 0 92px red,
       0 0 102px red,
       0 0 151px red;
+}
+
+#profile-page {
+  border: #ADEB68 solid 1px;
+  justify-content: center;
 }
 
