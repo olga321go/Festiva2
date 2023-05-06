@@ -11,14 +11,20 @@
     <input type="text" name="ticketPrice" value="{{festivalToEdit.ticketPrice}}"/>
   </label><br>
   <label>Info:<br>
-     <textarea 
+  {{!-- this looks nicer but doesn't want to populate --}}
+     {{!-- <textarea 
     rows = "7" 
     cols = "45" 
     name="info"
     value="{{festivalToEdit.info}}"
-    ></textarea>
+    ></textarea> --}}
+    {{!-- old version of info field --}}
+    {{!-- <label>Info:
+    <input type="text" name="info" value="{{festivalToEdit.info}}" />
+    </label><br> --}}
+    <input type="text" name="info" value="{{festivalToEdit.info}} " id="edit-info-input"/>
   </label><br>
-  <label>Lineup:
+  {{!-- <label>Lineup: --}}
    {{!-- <select name="lineup" multiple>
     
     {{#each allArtists}}
