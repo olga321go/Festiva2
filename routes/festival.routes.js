@@ -2,6 +2,7 @@ const express = require("express");
 const FestivalModel = require("../models/Festival.model");
 const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
+const fileUploader = require('../config/cloudinary.config');
 
 //route to list with all festivals
 router.get("/festival/festival-list", async (req, res, next) => {
@@ -19,9 +20,21 @@ router.get("/festival/create", isLoggedIn, (req, res) => {
 });
 
 //post route for the form to create a festival
-router.post("/festival/create", isLoggedIn, async (req, res) => {
+router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), async (req, res) => {
+  const { name, location, date, ticketPrice, info, lineup } = req.body;
+  
   try {
-    const newFestival = await FestivalModel.create(req.body);
+    
+    const newFestival = await FestivalModel.create({ 
+      name, 
+      location, 
+      date, 
+      ticketPrice, 
+      info, 
+      festivalImg: req.file.path, 
+      lineup 
+    });
+
     console.log("NEW FESTIVAL", newFestival);
     res.redirect("/festival/festival-list");
   } catch (err) {
