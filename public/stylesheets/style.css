@@ -9,7 +9,7 @@ blue: #182ABB */
   margin: 0;
 }
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
   /* background-color: #DFDFDF; */
   color: #31333b;
 }
@@ -44,6 +44,10 @@ h1 {
   background-color: #31333b;
   height: 80px;
   border-bottom: #adeb68 5px solid;
+}
+
+#links-navbar a {
+  font-size: 14px;
 }
 
 #logo-and-name {
@@ -160,13 +164,33 @@ h1 {
 }
 
 #create-festival form input {
-  padding: 5px 0;
+  /* padding: 5px 0;
   margin-bottom: 5px;
-  width: 100%;
+  width: 100%; */
+  font-size: 12px;
+  outline: none;
+
+  color: #777;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 12px;
+  margin-left: 18px;
+  width: 290px;
+  height: 35px;
 }
 
-#ticket-input {
-  width: 95% !important;
+#create-festival form textarea {
+  font-family: inherit;
+  font-size: 12px;
+  outline: none;
+
+  color: #777;
+  padding-left: 10px;
+  padding-top: 10px;
+  margin: 10px;
+  margin-top: 12px;
+  margin-left: 18px;
+
 }
 
 #new-festival-btn {
@@ -200,7 +224,8 @@ h1 {
 }
 
 #login-container input {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  /* I coded this font for the whole body so it's the same everywhere */
+  /* font-family: "Helvetica Neue", Helvetica, sans-serif; */
   font-size: 12px;
   outline: none;
 
