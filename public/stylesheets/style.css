@@ -107,7 +107,7 @@ h1 {
     border-radius: 3px;
     border-width: 0px;
     transition: transform 0.1s ease 0s;
-    background-color: rgb(48, 49, 55);
+    background-color: #31333b;
     color: white;
     padding: 5px 20px;
   }
@@ -225,4 +225,18 @@ h1 {
 #delete-edit-buttons {
   display: flex;
   gap: 20px;
+}
+
+#delete-button:hover {
+  background-color: #1a1919;
+  color: red;
+  text-shadow:
+      0 0 7px white,
+      0 0 10px white,
+      0 0 21px white,
+      0 0 42px red,
+      0 0 82px red,
+      0 0 92px red,
+      0 0 102px red,
+      0 0 151px red;
 }
