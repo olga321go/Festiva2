@@ -20,7 +20,16 @@ a {
 }
 
 a:hover {
-  color: #adeb68;
+  color: #DFDFDF;
+  text-shadow:
+      0 0 7px #DFDFDF,
+      0 0 10px #DFDFDF,
+      0 0 21px #DFDFDF,
+      0 0 42px #ADEB68,
+      0 0 82px #ADEB68,
+      0 0 92px #ADEB68,
+      0 0 102px #ADEB68,
+      0 0 151px #ADEB68;
 }
 
 h1 {
@@ -75,50 +84,68 @@ h1 {
   line-height: 150%;
 }
 
-.basic-btn {
-  font-family: inherit;
-  text-align: center;
-  cursor: pointer;
-  min-height: 20px;
-  height: 4vw;
-  max-height: 40px;
-  width: auto;
-  font-weight: 700;
-  font-size: 18px;
-  color: #dfdfdf;
-  letter-spacing: normal;
-  text-indent: 0px;
-  text-shadow: none;
-  /* position: relative; */
-  display: inline-block;
-  text-align: center;
-  border-radius: 3px;
-  border-width: 0px;
-  transition: transform 0.1s ease 0s;
-  background-color: rgb(48, 49, 55);
-  color: rgb(255, 255, 255);
-  padding: 5px 20px;
-}
 
-.basic-btn:hover {
-  background-color: #1a1919;
-  color: white;
-}
 
 #index-page-slides img {
   width: 700px;
 }
 
-footer {
-  background-color: #31333b;
-  color: #dfdfdf;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding: 20px 20px;
-  border-top: #adeb68 solid 5px;
-}
+
+
+.basic-btn{
+    font-family: inherit;
+    text-align: center;
+    cursor: pointer;
+    min-height: 20px;
+    height: 4vw;
+    max-height: 40px;
+    width: auto;
+    font-weight: 700;
+    font-size: 18px;
+    color:#DFDFDF;
+    letter-spacing: normal;
+    text-indent: 0px;
+    text-shadow: none;
+    /* position: relative; */
+    display: inline-block;
+    text-align: center;
+    border-radius: 3px;
+    border-width: 0px;
+    transition: transform 0.1s ease 0s;
+    background-color: #31333b;
+    color: white;
+    padding: 5px 20px;
+  }
+  
+  .basic-btn:hover {
+    background-color: #1a1919;
+    color: white;
+    text-shadow:
+        0 0 7px #DFDFDF,
+        0 0 10px #DFDFDF,
+        0 0 21px #DFDFDF,
+        0 0 42px #ADEB68,
+        0 0 82px #ADEB68,
+        0 0 92px #ADEB68,
+        0 0 102px #ADEB68,
+        0 0 151px #ADEB68;
+  }
+
+  #index-page-slides img{
+    width: 700px; 
+  }
+
+  footer {
+    background-color: #31333B;
+    color: #DFDFDF;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 20px;
+    border-top: #ADEB68 solid 5px;
+  }
+
 
 #create-festival {
   display: flex;
@@ -145,6 +172,7 @@ footer {
 #new-festival-btn {
   margin-top: 10px;
 }
+
 
 /*login hbs styling*/
 .login-form {
@@ -192,3 +220,81 @@ footer {
   color: #31333b;
   align-self: center !important;
 }
+
+.all-fest-page {
+  flex-direction: column;
+  align-items: center;
+}
+
+.festival-card {
+  background-color: #31333B;
+  color: #DFDFDF;
+  width: 20vw;
+  /* padding: 10px; */
+  gap: 10px;
+  max-width: 250px;
+}
+
+#all-festivals-box {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 40px;
+  /* border: yellow solid 2px; */
+  justify-content: center;
+}
+
+.festival-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.festival-card h3 {
+  text-align: center;
+  /* border: solid yellow 1px; */
+}
+
+.festival-card a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  /* border: solid yellow 1px; */
+
+}
+
+#detail-page {
+  display: flex;
+  padding: 50px 100px;
+  gap: 50px;
+
+}
+
+#detail-page-img img {
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#detail-page-text h1 {
+ 
+}
+
+#delete-edit-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+#delete-button:hover {
+  background-color: #1a1919;
+  color: red;
+  text-shadow:
+      0 0 7px white,
+      0 0 10px white,
+      0 0 21px white,
+      0 0 42px red,
+      0 0 82px red,
+      0 0 92px red,
+      0 0 102px red,
+      0 0 151px red;
+}
+

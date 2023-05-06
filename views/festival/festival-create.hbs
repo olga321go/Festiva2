@@ -1,11 +1,17 @@
 <div class="basic-container" id="create-festival">
   <h2>CREATE A NEW FESTIVAL</h2>
-  <form name="newFestivalForm" class="" action="/festival/create" method="post">
+  <form name="newFestivalForm" class="" action="/festival/create" method="post" enctype="multipart/form-data">
     <input
     type="text"
     name="name"
     value=""
     placeholder="Name of the festival"
+    /><br>
+    <input
+    type="file"
+    name="festivalImg"
+    value=""
+    placeholder="upload the image"
     /><br>
     <input type="text" 
     name="location" 
