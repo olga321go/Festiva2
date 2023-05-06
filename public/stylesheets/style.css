@@ -11,17 +11,16 @@ blue: #182ABB */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   /* background-color: #DFDFDF; */
-  color: #31333B;
-
+  color: #31333b;
 }
 
 a {
   text-decoration: none;
-  color:#DFDFDF;
+  color: #dfdfdf;
 }
 
 a:hover {
-  color: #ADEB68;
+  color: #adeb68;
 }
 
 h1 {
@@ -33,21 +32,19 @@ h1 {
   justify-content: space-between;
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #31333B;
+  background-color: #31333b;
   height: 80px;
-  border-bottom: #ADEB68 5px solid;
+  border-bottom: #adeb68 5px solid;
 }
 
 #logo-and-name {
   display: flex;
   align-items: center;
-  
 }
 
 #logo-and-name h4 {
-  color: #DFDFDF;
+  color: #dfdfdf;
   font-size: 20px;
-
 }
 
 #links-navbar {
@@ -73,55 +70,55 @@ h1 {
   align-items: center;
 }
 
-#index-text-and-button p{
+#index-text-and-button p {
   font-size: 16px;
   line-height: 150%;
 }
 
 .basic-btn {
-    font-family: inherit;
-    text-align: center;
-    cursor: pointer;
-    min-height: 20px;
-    height: 4vw;
-    max-height: 40px;
-    width: auto;
-    font-weight: 700;
-    font-size: 18px;
-    color:#DFDFDF;
-    letter-spacing: normal;
-    text-indent: 0px;
-    text-shadow: none;
-    /* position: relative; */
-    display: inline-block;
-    text-align: center;
-    border-radius: 3px;
-    border-width: 0px;
-    transition: transform 0.1s ease 0s;
-    background-color: rgb(48, 49, 55);
-    color: rgb(255, 255, 255);
-    padding: 5px 20px;
-  }
-  
-  .basic-btn:hover {
-    background-color: #1a1919;
-    color: white;
-  }
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+  min-height: 20px;
+  height: 4vw;
+  max-height: 40px;
+  width: auto;
+  font-weight: 700;
+  font-size: 18px;
+  color: #dfdfdf;
+  letter-spacing: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  /* position: relative; */
+  display: inline-block;
+  text-align: center;
+  border-radius: 3px;
+  border-width: 0px;
+  transition: transform 0.1s ease 0s;
+  background-color: rgb(48, 49, 55);
+  color: rgb(255, 255, 255);
+  padding: 5px 20px;
+}
 
-  #index-page-slides img{
-    width: 700px; 
-  }
+.basic-btn:hover {
+  background-color: #1a1919;
+  color: white;
+}
 
-  footer {
-    background-color: #31333B;
-    color: #DFDFDF;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 20px 20px;
-    border-top: #ADEB68 solid 5px;
-  }
+#index-page-slides img {
+  width: 700px;
+}
+
+footer {
+  background-color: #31333b;
+  color: #dfdfdf;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 20px;
+  border-top: #adeb68 solid 5px;
+}
 
 #create-festival {
   display: flex;
@@ -142,9 +139,56 @@ h1 {
 }
 
 #ticket-input {
-  width: 95% !important
+  width: 95% !important;
 }
 
 #new-festival-btn {
   margin-top: 10px;
+}
+
+/*login hbs styling*/
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+#login-container {
+  position: fixed;
+  width: 340px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  margin-top: -140px;
+  margin-left: -170px;
+}
+
+#login-container form {
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#login-container input {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 12px;
+  outline: none;
+
+  color: #777;
+  padding-left: 10px;
+  margin: 10px;
+  margin-top: 12px;
+  margin-left: 18px;
+  width: 290px;
+  height: 35px;
+}
+
+#login-container a {
+  color: #787878;
+  padding-top: 20px;
+}
+
+#login-container a:hover {
+  color: #31333b;
+  align-self: center !important;
 }
