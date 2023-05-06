@@ -176,10 +176,8 @@ h1 {
   background-color: #31333B;
   color: #DFDFDF;
   width: 20vw;
-  padding: 10px;
+  /* padding: 10px; */
   gap: 10px;
-  border: #ADEB68 solid 5px;
-  border-radius: 5%;
   max-width: 250px;
 }
 
@@ -190,6 +188,11 @@ h1 {
   gap: 40px;
   /* border: yellow solid 2px; */
   justify-content: center;
+}
+
+.festival-card img {
+  max-width: 100%;
+  height: auto;
 }
 
 .festival-card h3 {
