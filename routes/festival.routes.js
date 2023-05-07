@@ -41,7 +41,8 @@ router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), 
       lineup,
       author: author,
     });
-
+    
+    const pushingToUser = await UserModel.findByIdAndUpdate(author, { $push: { eventsCreated: newFestival._id } });
     console.log("NEW FESTIVAL", newFestival);
     res.redirect("/festival/festival-list");
   } catch (err) {

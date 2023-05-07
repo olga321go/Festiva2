@@ -11,10 +11,12 @@ router.get("/", (req, res, next) => {
   res.render("index");
 });
 
-router.get("/profile", isLoggedIn, (req, res) => {
-  // const { userID } = req.user._id;
+router.get("/profile", isLoggedIn, async (req, res) => {
+  // const { userID } = req.session.user._id;
+  const usersName = req.session.user.username;
+  const currentUser = await UserModel.findOne({ username: usersName }).populate("eventsCreated");
   // const currentUser = await UserModel.findById(userID).populate("eventsCreated");
-  console.log(req.session.user);
+  // console.log(req.session.user);
   res.render("auth/profile", { user: req.session.user }); 
 });
  
