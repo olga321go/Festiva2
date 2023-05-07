@@ -3,6 +3,7 @@ const FestivalModel = require("../models/Festival.model");
 const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const fileUploader = require('../config/cloudinary.config');
+const UserModel = require("../models/User.model");
 
 //route to list with all festivals
 router.get("/festival/festival-list", async (req, res, next) => {
@@ -15,16 +16,21 @@ router.get("/festival/festival-list", async (req, res, next) => {
 });
 
 //routes to create a festival
-router.get("/festival/create", isLoggedIn, (req, res) => {
+router.get("/festival/create", isLoggedIn, async (req, res) => {
   res.render("festival/festival-create");
 });
 
 //post route for the form to create a festival
 router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), async (req, res) => {
   const { name, location, date, ticketPrice, info, lineup } = req.body;
+  const authorsName = req.session.user.username;
+  const author = await UserModel.findOne({ username: authorsName });
+  // const authorsId = author._id;
+
+  console.log("LOGGED USER", author);
+  // console.log("LOGGED USER'S ID", authorsId);
   
   try {
-    
     const newFestival = await FestivalModel.create({ 
       name, 
       location, 
@@ -32,7 +38,8 @@ router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), 
       ticketPrice, 
       info, 
       festivalImg: req.file.path, 
-      lineup 
+      lineup,
+      author: author,
     });
 
     console.log("NEW FESTIVAL", newFestival);
@@ -47,6 +54,8 @@ router.get("/festival/:festivalID", async (req, res) => {
   const { festivalID } = req.params;
   //later, if we add artists, we have to add here .populate("lineup")
   const currentFestival = await FestivalModel.findById(festivalID);
+  // no idea how I should be able to display in hbs the username of the author
+  // const author = await UserModel.find();
   console.log("current festival", currentFestival);
   res.render("festival/festival-detail", { currentFestival });
 });
