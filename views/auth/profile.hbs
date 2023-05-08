@@ -1,11 +1,11 @@
 <div id="profile-page" class="basic-container">
   <div id="profile-page-img">
-    <img src="{{user.profilePhoto}}" alt="profile image"/>
+    <img src="{{currentUser.profilePhoto}}" alt="profile image"/>
   </div>
   <div id="profile-page-content">
-    <h1>Welcome {{user.username}}</h1><br>
+    <h1>Welcome {{currentUser.username}}</h1><br>
     <h3>Created by you: it'll display all the created events but for now it doesn't work</h3>
-    {{#each user.eventsCreated}}
+    {{#each currentUser.eventsCreated}}
       <h3>{{name}}</h3>
     {{/each}}
     <br>
