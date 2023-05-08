@@ -41,7 +41,7 @@ router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), 
       lineup,
       author: author,
     });
-    
+
     const pushingToUser = await UserModel.findByIdAndUpdate(author, { $push: { eventsCreated: newFestival._id } });
     console.log("NEW FESTIVAL", newFestival);
     res.redirect("/festival/festival-list");
@@ -54,7 +54,7 @@ router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), 
 router.get("/festival/:festivalID", async (req, res) => {
   const { festivalID } = req.params;
   //later, if we add artists, we have to add here .populate("lineup")
-  const currentFestival = await FestivalModel.findById(festivalID);
+  const currentFestival = await FestivalModel.findById(festivalID).populate("author");
   // no idea how I should be able to display in hbs the username of the author
   // const author = await UserModel.find();
   console.log("current festival", currentFestival);
