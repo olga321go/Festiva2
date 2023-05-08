@@ -350,7 +350,24 @@ footer {
 } */
 
 #profile-page {
-  border: #ADEB68 solid 1px;
+  /* border: #ADEB68 solid 1px; */
   justify-content: center;
+}
+
+#profile-page-content a {
+  color: #31333B;
+}
+
+#profile-page-content a:hover {
+  color: #31333B;
+  text-shadow:
+        0 0 7px #ADEB68,
+        0 0 10px #ADEB68,
+        0 0 21px #ADEB68,
+        0 0 42px #ADEB68,
+        0 0 82px #ADEB68,
+        0 0 92px #ADEB68,
+        0 0 102px #ADEB68,
+        0 0 151px #ADEB68;
 }
 
