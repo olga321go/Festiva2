@@ -5,14 +5,14 @@ const isLoggedIn = require("../middlewares/isLoggedIn");
 const UserModel = require("../models/User.model");
 const FestivalModel = require("../models/Festival.model");
 
-router.use("/", authRoutes);
+//router.use("/", authRoutes);
 
 /* GET home page */
-router.get("/", (req, res, next) => {
-  res.render("index");
+router.get("/artist/list", (req, res, next) => {
+  res.render("artist/artist-list");
 });
 
-router.get("/profile", isLoggedIn, async (req, res) => {
+/*router.get("/profile", isLoggedIn, async (req, res) => {
   // const { userID } = req.session.user._id;
   const usersName = req.session.user.username;
   const currentUser = await UserModel.findOne({ username: usersName }).populate(
@@ -24,6 +24,6 @@ router.get("/profile", isLoggedIn, async (req, res) => {
   // const user = req.session.user;
   console.log("LOGGED USER", currentUser);
   res.render("auth/profile", { currentUser, usersEvents });
-});
+});*/
 
 module.exports = router;
