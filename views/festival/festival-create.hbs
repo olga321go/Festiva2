@@ -44,6 +44,12 @@
     placeholder="Info about the festival" 
     value=""></textarea>
     <br>
+    <label for="lineup">Select your artists (hold ctrl and click):</label>
+      <select name="lineup" id="" multiple>
+        {{#each artists}}
+          <option value={{_id}}>{{name}}</option>
+        {{/each}}
+      </select>
     <button type="submit" class="basic-btn" id="new-festival-btn">Create New Festival</button>
   </form>
 </div>

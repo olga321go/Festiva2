@@ -8,7 +8,10 @@ const FestivalModel = require("../models/Festival.model");
 //router.use("/", authRoutes);
 
 /* GET home page */
-router.get("/artist/list", (req, res, next) => {
+router.get("/artist/list", async (req, res, next) => {
+
+  const artist = await ArtistModel.find().populate("eventsCreated");
+  const usersEvents = await FestivalModel.find();
   res.render("artist/artist-list");
 });
 
