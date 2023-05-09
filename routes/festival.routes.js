@@ -4,11 +4,18 @@ const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const fileUploader = require('../config/cloudinary.config');
 const UserModel = require("../models/User.model");
+const ArtistModel = require("../models/Artist.model");
 
 //route to list with all festivals
 router.get("/festival/festival-list", async (req, res, next) => {
   try {
     const allFestivals = await FestivalModel.find();
+    // const parsedDate = allFestivals.date.toDateString();
+    // const updatedDates = [];
+    // for (i=0; i<allFestivals.length; i++) {
+    //   const parsedDate = allFestivals[i].date.toDateString();
+    //   updatedDates.push(parsedDate);
+    // }
     res.render("festival/festival-all", { allFestivals });
   } catch {
     res.send("Oops, an error, go back");
@@ -17,7 +24,8 @@ router.get("/festival/festival-list", async (req, res, next) => {
 
 //routes to create a festival
 router.get("/festival/create", isLoggedIn, async (req, res) => {
-  res.render("festival/festival-create");
+  const artists = await ArtistModel.find();
+  res.render("festival/festival-create", { artists });
 });
 
 //post route for the form to create a festival
@@ -55,8 +63,10 @@ router.get("/festival/:festivalID", async (req, res) => {
   const { festivalID } = req.params;
   //later, if we add artists, we have to add here .populate("lineup")
   const currentFestival = await FestivalModel.findById(festivalID).populate("author");
+  const populatedLineup = await FestivalModel.findById(festivalID).populate("lineup");
+  const parsedDate = currentFestival.date.toDateString();
   console.log("current festival", currentFestival);
-  res.render("festival/festival-detail", { currentFestival });
+  res.render("festival/festival-detail", { currentFestival, populatedLineup, parsedDate });
 });
 
 router.get("/festival/:festivalID/edit", isLoggedIn, async (req, res) => {
