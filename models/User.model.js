@@ -25,8 +25,8 @@ const userSchema = new Schema(
       type: String,
       required: true, 
     }, 
-    // ref: Reference to model
-    eventsCreated: [{ type: Schema.Types.ObjectId, ref: "FestivalModel" }], 
+    // ref: Reference to collection in db
+    eventsCreated: [{ type: Schema.Types.ObjectId, ref: "festival" }], 
   }, 
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
