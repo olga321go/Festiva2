@@ -20,7 +20,7 @@ require("./config")(app);
 
 // default value for title local
 const capitalize = require("./utils/capitalize");
-const projectName = "Festiva"; 
+const projectName = "Festiva";
 
 // app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
@@ -32,7 +32,10 @@ const authRoutes = require("./routes/auth.routes");
 app.use("/", authRoutes);
 
 const festivalRoutes = require("./routes/festival.routes");
-app.use("/", festivalRoutes); 
+app.use("/", festivalRoutes);
+
+const artistRoutes = require("./routes/artist.routes");
+app.use("/", artistRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
