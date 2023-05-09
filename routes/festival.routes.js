@@ -55,8 +55,6 @@ router.get("/festival/:festivalID", async (req, res) => {
   const { festivalID } = req.params;
   //later, if we add artists, we have to add here .populate("lineup")
   const currentFestival = await FestivalModel.findById(festivalID).populate("author");
-  // no idea how I should be able to display in hbs the username of the author
-  // const author = await UserModel.find();
   console.log("current festival", currentFestival);
   res.render("festival/festival-detail", { currentFestival });
 });
