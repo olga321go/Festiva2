@@ -7,12 +7,19 @@
     value=""
     placeholder="Name of the festival"
     /><br>
+    {{!-- <input
+    type="text"
+    name="author"
+    value="{{currentUser._id}}"
+    placeholder="Created by {{currentUser.username}}"
+    /><br> --}}
+    <label>Upload a festival photo:<br>
     <input
     type="file"
     name="festivalImg"
     value=""
     placeholder="upload the image"
-    /><br>
+    /></label><br>
     <input type="text" 
     name="location" 
     value="" 
@@ -27,12 +34,12 @@
     type="text"
     name="ticketPrice"
     value=""
-    placeholder="Ticket price" 
+    placeholder="Ticket price in $" 
     id="ticket-input"
-    />$<br>
+    /><br>
     <textarea 
     rows = "7" 
-    cols = "40" 
+    cols = "45" 
     name="info"
     placeholder="Info about the festival" 
     value=""></textarea>
@@ -41,4 +48,18 @@
   </form>
 </div>
 
+{{!-- documentation page: https://www.skypack.dev/view/canvas-confetti --}}
+{{!-- I've done it without npm installation, just via script tag --}}
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js">
+</script>
+<script>
+  const btn = document.getElementById('new-festival-btn');
 
+  btn.addEventListener('click', () => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: {y: .8}
+    });
+  });
+</script>

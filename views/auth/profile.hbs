@@ -1,5 +1,20 @@
-<h1>Hello {{user.username}}</h1>
+<div id="profile-page" class="basic-container">
+  <div id="profile-page-img">
+    <img src="{{currentUser.profilePhoto}}" alt="profile image"/>
+  </div>
+  <div id="profile-page-content">
+    <h1>Welcome {{currentUser.username}}</h1><br>
+    <h3>Your events:</h3>
+    {{#each currentUser.eventsCreated}}
+      <a href="/festival/{{_id}}">
+        <h3>{{name}}</h3>
+      </a>
+    {{/each}}
+    <br>
+    <form method="POST" action="/logout">
+      <button type="submit" class="basic-btn">Logout</button>
+    </form>
+  </div>
+  
+</div>
 
-<form method="POST" action="/logout">
-  <button type="submit" class="basic-btn">Logout</button>
-</form>
