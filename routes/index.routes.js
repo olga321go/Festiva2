@@ -15,13 +15,22 @@ router.get("/", (req, res, next) => {
 router.get("/profile", isLoggedIn, async (req, res) => {
   // const { userID } = req.session.user._id;
   const usersName = req.session.user.username;
-  const currentUser = await UserModel.findOne({ username: usersName }).populate("eventsCreated");
+  const currentUser = await UserModel.findOne({ username: usersName }).populate(
+    "eventsCreated"
+  );
   const usersEvents = await FestivalModel.find();
   // const currentUser = await UserModel.findById(userID).populate("eventsCreated");
   // console.log(req.session.user);
   // const user = req.session.user;
   console.log("LOGGED USER", currentUser);
-  res.render("auth/profile", { currentUser, usersEvents }); 
+  res.render("auth/profile", { currentUser, usersEvents });
 });
- 
-module.exports = router; 
+
+// Route for editing Profile
+router.get("/profile/:profileId/edit", isLoggedIn, async (req, res) => {
+  const { profileId } = req.params;
+  const profileToEdit = await UserModel.findById(profileId);
+  res.render("auth/profile-edit", { profileToEdit });
+});
+
+module.exports = router;
