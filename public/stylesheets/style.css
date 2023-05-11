@@ -320,7 +320,8 @@ footer {
   max-width: 700px;
 }
 
-#detail-page-img img {
+#detail-page-img img,
+#profile-page-img img {
   width: 100%;
   height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -367,6 +368,10 @@ footer {
 
 #profile-page-content a {
   color: #31333B;
+}
+
+#profile-page-img {
+  max-width: 300px;
 }
 
 #profile-page-content a:hover {
