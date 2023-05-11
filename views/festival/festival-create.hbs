@@ -1,56 +1,62 @@
 <div class="basic-container" id="create-festival">
   <h2>CREATE A NEW FESTIVAL</h2>
-  <form name="newFestivalForm" class="" action="/festival/create" method="post" enctype="multipart/form-data">
-    <input
-    type="text"
-    name="name"
-    value=""
-    placeholder="Name of the festival"
-    /><br>
-    {{!-- <input
-    type="text"
-    name="author"
-    value="{{currentUser._id}}"
-    placeholder="Created by {{currentUser.username}}"
-    /><br> --}}
-    <label>Upload a festival photo:<br>
-    <input
-    type="file"
-    name="festivalImg"
-    value=""
-    placeholder="upload the image"
-    /></label><br>
-    <input type="text" 
-    name="location" 
-    value="" 
-    placeholder="Location" /><br>
-    <input
-    type="date"
-    name="date"
-    value=""
-    placeholder="date YYYY-MM-DD"
-    /><br>
-    <input
-    type="text"
-    name="ticketPrice"
-    value=""
-    placeholder="Ticket price in $" 
-    id="ticket-input"
-    /><br>
-    <textarea 
-    rows = "7" 
-    cols = "45" 
-    name="info"
-    placeholder="Info about the festival" 
-    value=""></textarea>
-    <br>
-    <label for="lineup">Select your artists (hold ctrl and click):</label>
-      <select name="lineup" id="" multiple>
-        {{#each artists}}
-          <option value={{_id}}>{{name}}</option>
-        {{/each}}
-      </select>
-    <button type="submit" class="basic-btn" id="new-festival-btn">Create New Festival</button>
+  <div id="columns-container">
+    <div id="column-one">
+      <form name="newFestivalForm" class="" action="/festival/create" method="post" enctype="multipart/form-data">
+        <input
+          type="text"
+          name="name"
+          value=""
+          placeholder="Name of the festival"
+          /><br>
+          {{!-- <input
+          type="text"
+          name="author"
+          value="{{currentUser._id}}"
+          placeholder="Created by {{currentUser.username}}"
+          /><br> --}}
+          <label>Upload a festival photo:<br>
+          <input
+          type="file"
+          name="festivalImg"
+          value=""
+          placeholder="upload the image"
+          /></label><br>
+          <input type="text" 
+          name="location" 
+          value="" 
+          placeholder="Location" /><br>
+          <input
+          type="date"
+          name="date"
+          value=""
+          placeholder="date YYYY-MM-DD"
+          /><br>
+          <input
+          type="text"
+          name="ticketPrice"
+          value=""
+          placeholder="Ticket price in $" 
+          d="ticket-input"
+          /><br>
+          <textarea 
+          rows = "7" 
+          cols = "45" 
+          name="info"
+          placeholder="Info about the festival" 
+          value=""></textarea>
+
+    </div>
+    <div id="column-two">
+      <label for="lineup">Select your artists (hold ctrl and click):</label><br><br>
+        <select name="lineup" multiple id="select-multiple-input" size="20">
+          {{#each artists}}
+            <option value={{_id}}>{{name}}</option>
+          {{/each}}
+        </select><br>
+    </div>
+  </div>
+  <button type="submit" class="basic-btn" id="new-festival-btn">Create New Festival</button>
   </form>
 </div>
 
