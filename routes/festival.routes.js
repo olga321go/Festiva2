@@ -2,39 +2,23 @@ const express = require("express");
 const FestivalModel = require("../models/Festival.model");
 const router = express.Router();
 const isLoggedIn = require("../middlewares/isLoggedIn");
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require("../config/cloudinary.config");
 const UserModel = require("../models/User.model");
 const ArtistModel = require("../models/Artist.model");
 
 //route to list with all festivals
 router.get("/festival/festival-list", async (req, res, next) => {
   try {
-    const allFestivals = await FestivalModel.find();
-    const allDatesChanged = allFestivals.map((festival) => {
+    const allFestivals = await FestivalModel.find().lean();
+
+    const allFestivalsMapped = allFestivals.map((festival) => {
       if (festival.date) {
-      const edittedDate = festival.date.toDateString();
-      return edittedDate;  
-      } else {
-         return festival; 
+        festival.date = festival.date.toDateString();
       }
-    });  
+      return festival;
+    });
 
-    console.log(allDatesChanged);    
-
-    // const festDate = festival.date;
-    // const edittedDates = festDate.toDateString();
-
-    // const festivalDate = req.allFestivals.date;
-    // const changedDate = festivalDate.toDateString();
-    // console.log(changedDate);
-
-    // const parsedDate = allFestivals.date.toDateString();
-    // const updatedDates = [];
-    // for (i=0; i<allFestivals.length; i++) {
-    //   const parsedDate = allFestivals[i].date.toDateString();
-    //   updatedDates.push(parsedDate);
-    // }
-    res.render("festival/festival-all", { allFestivals, allDatesChanged });
+    res.render("festival/festival-all", { allFestivals: allFestivalsMapped });
   } catch {
     res.send("Oops, an error, go back");
   }
@@ -47,44 +31,59 @@ router.get("/festival/create", isLoggedIn, async (req, res) => {
 });
 
 //post route for the form to create a festival
-router.post("/festival/create", isLoggedIn, fileUploader.single('festivalImg'), async (req, res) => {
-  const { name, location, date, ticketPrice, info, lineup } = req.body;
-  const authorsName = req.session.user.username;
-  const author = await UserModel.findOne({ username: authorsName });
-  // const authorsId = author._id;
+router.post(
+  "/festival/create",
+  isLoggedIn,
+  fileUploader.single("festivalImg"),
+  async (req, res) => {
+    const { name, location, date, ticketPrice, info, lineup } = req.body;
+    const authorsName = req.session.user.username;
+    const author = await UserModel.findOne({ username: authorsName });
+    // const authorsId = author._id;
 
-  console.log("LOGGED USER", author);
-  // console.log("LOGGED USER'S ID", authorsId);
-  
-  try {
-    const newFestival = await FestivalModel.create({ 
-      name, 
-      location, 
-      date, 
-      ticketPrice, 
-      info, 
-      festivalImg: req.file.path, 
-      lineup,
-      author: author,
-    });
+    console.log("LOGGED USER", author);
+    // console.log("LOGGED USER'S ID", authorsId);
 
-    const pushingToUser = await UserModel.findByIdAndUpdate(author, { $push: { eventsCreated: newFestival._id } });
-    console.log("NEW FESTIVAL", newFestival);
-    res.redirect("/festival/festival-list");
-  } catch (err) {
-    res.redirect("/festival/create");
-    console.log("Error while trying to create an event", err);
+    try {
+      const newFestival = await FestivalModel.create({
+        name,
+        location,
+        date,
+        ticketPrice,
+        info,
+        festivalImg: req.file.path,
+        lineup,
+        author: author,
+      });
+
+      const pushingToUser = await UserModel.findByIdAndUpdate(author, {
+        $push: { eventsCreated: newFestival._id },
+      });
+      console.log("NEW FESTIVAL", newFestival);
+      res.redirect("/festival/festival-list");
+    } catch (err) {
+      res.redirect("/festival/create");
+      console.log("Error while trying to create an event", err);
+    }
   }
-});
+);
 
 router.get("/festival/:festivalID", async (req, res) => {
   const { festivalID } = req.params;
   //later, if we add artists, we have to add here .populate("lineup")
-  const currentFestival = await FestivalModel.findById(festivalID).populate("author");
-  const populatedLineup = await FestivalModel.findById(festivalID).populate("lineup");
+  const currentFestival = await FestivalModel.findById(festivalID).populate(
+    "author"
+  );
+  const populatedLineup = await FestivalModel.findById(festivalID).populate(
+    "lineup"
+  );
   const parsedDate = currentFestival.date.toDateString();
   console.log("current festival", currentFestival);
-  res.render("festival/festival-detail", { currentFestival, populatedLineup, parsedDate });
+  res.render("festival/festival-detail", {
+    currentFestival,
+    populatedLineup,
+    parsedDate,
+  });
 });
 
 router.get("/festival/:festivalID/edit", isLoggedIn, async (req, res) => {
