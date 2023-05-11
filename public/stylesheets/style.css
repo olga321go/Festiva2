@@ -154,6 +154,10 @@ footer {
   align-items: center;
 }
 
+#columns-container {
+  display: flex;
+}
+
 #create-festival form {
   /* border: solid green 1px; */
   text-align: center;
@@ -186,6 +190,13 @@ footer {
   margin: 10px;
   margin-top: 12px;
   margin-left: 18px;
+
+}
+
+#select-multiple-input {
+  /* overflow-y: auto; */
+  padding: 10px;
+  
 
 }
 
