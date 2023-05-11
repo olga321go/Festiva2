@@ -10,13 +10,31 @@ const ArtistModel = require("../models/Artist.model");
 router.get("/festival/festival-list", async (req, res, next) => {
   try {
     const allFestivals = await FestivalModel.find();
+    const allDatesChanged = allFestivals.map((festival) => {
+      if (festival.date) {
+      const edittedDate = festival.date.toDateString();
+      return edittedDate;  
+      } else {
+         return festival; 
+      }
+    });  
+
+    console.log(allDatesChanged);    
+
+    // const festDate = festival.date;
+    // const edittedDates = festDate.toDateString();
+
+    // const festivalDate = req.allFestivals.date;
+    // const changedDate = festivalDate.toDateString();
+    // console.log(changedDate);
+
     // const parsedDate = allFestivals.date.toDateString();
     // const updatedDates = [];
     // for (i=0; i<allFestivals.length; i++) {
     //   const parsedDate = allFestivals[i].date.toDateString();
     //   updatedDates.push(parsedDate);
     // }
-    res.render("festival/festival-all", { allFestivals });
+    res.render("festival/festival-all", { allFestivals, allDatesChanged });
   } catch {
     res.send("Oops, an error, go back");
   }
