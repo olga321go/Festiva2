@@ -75,7 +75,8 @@ footer {
   /* max-width: 500px; */
   /* align-self: center; */
   padding: 50px 100px;
-  gap: 50px;
+  gap: 20px;
+  /* border: 1px solid yellow; */
 }
 
 #index-page-content {
