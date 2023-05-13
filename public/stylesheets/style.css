@@ -54,6 +54,9 @@ footer {
 #logo-and-name {
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 1%;
 }
 
 #logo-and-name h4 {
@@ -417,3 +420,43 @@ footer {
   gap: 10px;
 }
 
+
+/* invisible menu stuff for mobile */
+label #menu-btn,
+label #close-menu {
+  color:#DFDFDF;
+  font-size: 30px;
+  float: right;
+  line-height: 50px;
+  margin-right: 10px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  label #menu-btn {
+    display: block;
+    float: right;
+    border: solid pink 1px;
+  }
+
+  #links-navbar {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #31333B;
+    top: 60px;
+    left: 0;
+    text-align: center;
+    border: solid yellow 1px;
+  }
+
+  #links-navbar a {
+    display: block;
+    border: solid red 1px;
+  }
+}
