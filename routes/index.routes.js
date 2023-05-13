@@ -33,4 +33,24 @@ router.get("/profile/:profileId/edit", isLoggedIn, async (req, res) => {
   res.render("auth/profile-edit", { profileToEdit });
 });
 
+router.post("/profile/:profileId/edit", isLoggedIn, async (req, res) => {
+  const { profileId } = req.params;
+  const updatedUser = await UserModel.findByIdAndUpdate(
+    { _id: profileId },
+    req.body
+  );
+  res.redirect(`/profile`);
+});
+
+router.post("/profile/:profileId/delete", isLoggedIn, async (req, res) => {
+  try {
+    const { profileId } = req.params;
+    await UserModel.findByIdAndDelete(profileId);
+    res.redirect("/");
+  } catch (err) {
+    console.log("profile delete post error", err);
+    res.send("Oops, problem while deleting, try again.");
+  }
+});
+
 module.exports = router;
