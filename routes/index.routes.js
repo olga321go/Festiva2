@@ -4,6 +4,8 @@ const authRoutes = require("./auth.routes");
 const isLoggedIn = require("../middlewares/isLoggedIn");
 const UserModel = require("../models/User.model");
 const FestivalModel = require("../models/Festival.model");
+const bcryptjs = require("bcryptjs");
+const fileUploader = require("../config/cloudinary.config");
 
 router.use("/", authRoutes);
 
@@ -35,10 +37,26 @@ router.get("/profile/:profileId/edit", isLoggedIn, async (req, res) => {
 
 router.post("/profile/:profileId/edit", isLoggedIn, async (req, res) => {
   const { profileId } = req.params;
-  const updatedUser = await UserModel.findByIdAndUpdate(
+  /*const updatedUser = await UserModel.findByIdAndUpdate(
     { _id: profileId },
     req.body
+  );*/
+  const salt = await bcryptjs.genSalt(12);
+  console.log(salt);
+
+  const hash = await bcryptjs.hash(req.body.password, salt);
+  console.log(hash);
+
+  await UserModel.findByIdAndUpdate(
+    { _id: profileId },
+    {
+      username: req.body.username,
+      email: req.body.email,
+      password: hash,
+      //profilePhoto: req.file.path,
+    }
   );
+
   res.redirect(`/profile`);
 });
 
