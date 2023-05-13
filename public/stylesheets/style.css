@@ -374,6 +374,13 @@ footer {
   max-width: 300px;
 }
 
+#profile-page-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border: solid green 1px; */
+}
+
 #profile-page-content a:hover {
   color: #31333B;
   text-shadow:
@@ -385,5 +392,11 @@ footer {
         0 0 92px #ADEB68,
         0 0 102px #ADEB68,
         0 0 151px #ADEB68;
+}
+
+#profile-page-buttons {
+  display: flex;
+  /* border: red solid 1px; */
+  gap: 10px;
 }
 
