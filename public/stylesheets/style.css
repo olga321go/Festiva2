@@ -82,7 +82,23 @@ footer {
 #index-page-content {
   display: flex;
   text-align: center;
-  align-items: center;
+  align-self: center;
+  /* border: solid red 1px; */
+  align-items: center ;
+  height: 70vh;
+}
+
+#index-content-slides {
+  display: flex;
+  gap: 20px;
+  /* border: solid green 2px; */
+  margin: 0 auto;
+  align-items: center ;
+  
+}
+
+#index-text-and-button {
+  max-width: 500px;
 }
 
 #index-text-and-button p {
