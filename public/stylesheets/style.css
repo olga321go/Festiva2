@@ -12,6 +12,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, sans-serif;
   /* background-color: #DFDFDF; */
   color: #31333b;
+  padding-bottom: 80px;
 }
 
 a {
@@ -287,9 +288,11 @@ footer {
   align-self: center !important;
 }
 
-.all-fest-page {
+#all-fest-page {
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+  /* border: solid red 2px; */
 }
 
 .festival-card {
@@ -334,6 +337,12 @@ footer {
   /* position: absolute; */
   bottom: 0;
   padding-bottom: 10px;
+}
+
+#table-container a {
+  background-color: #ADEB68;
+  color: #31333B;
+  padding-top: 10px;
 }
 
 #detail-page {
@@ -503,7 +512,7 @@ label #close-menu {
     width: 100%;
     height: 100vh;
     background-color: #31333B;
-    top: 60px;
+    top: 65px;
     left: -100%;
     transition: all .5s;
     text-align: center;
@@ -535,7 +544,7 @@ label #close-menu {
 
   /* index page edit */
   .basic-container {
-    margin-top: 10%;
+    /* margin-top: 65px; */
     padding: 0px 20px;
     gap: 5px;
     /* margin-bottom: 50px; */
@@ -569,11 +578,11 @@ label #close-menu {
     padding-bottom: 20px;
   }
 
-  .all-fest-page {
+  #all-fest-page {
    /* border: solid 1px red; */
   }
 
-  .all-fest-page h2 {
+  #all-fest-page h2 {
     text-align: center;
     font-size: 20px;
     margin-bottom: 10px;
@@ -590,7 +599,12 @@ label #close-menu {
     width: 90%;
     /* border: solid green 3px; */
     margin: 0 auto;
-    
+  }
+
+  #table-container a {
+    background-color: #ADEB68;
+    color: #31333B;
+    padding-top: 10px;
   }
 
   .festival-card {
