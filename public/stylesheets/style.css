@@ -125,9 +125,10 @@ footer {
     font-family: inherit;
     text-align: center;
     cursor: pointer;
-    min-height: 20px;
-    height: 4vw;
-    max-height: 40px;
+    /* min-height: 20px; */
+    /* height: 4vw; */
+    /* max-height: 40px; */
+    height: fit-content;
     width: auto;
     font-weight: 700;
     font-size: 18px;
@@ -492,6 +493,7 @@ label #close-menu {
 
   /* index page edit */
   .basic-container {
+    margin-top: 10%;
     padding: 20px 20px;
     gap: 5px;
   }
