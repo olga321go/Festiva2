@@ -1,30 +1,27 @@
 <div id="profile-page" class="basic-container">
-  <div id="profile-page-img">
+  <div id="profile-row-one">
     <img src="{{currentUser.profilePhoto}}" alt="profile image" />
-  </div>
-  <div id="profile-page-content">
-    <div id="profile-page-text">
-      <h1>Welcome {{currentUser.username}}</h1><br />
-        <h3>Your events:</h3><br>
-          {{#each currentUser.eventsCreated}}
-            <a href="/festival/{{_id}}">
-              <h3>{{name}}</h3>
-            </a>
-          {{/each}}
-    </div>
-     <div id="profile-page-buttons">
+    <div id="profile-header-btns">
+      <h1>Welcome {{currentUser.username}}</h1>
+      <div id="profile-page-buttons">
           <form method="POST" action="/logout">
             <button type="submit" class="basic-btn">Log out</button>
           </form>
           <a href="/profile/{{currentUser._id}}/edit">
             <button class="basic-btn">Edit Profile</button>
           </a>
-     </div>
+      </div>
+    </div>
   </div>
-  
-    
-   
+  <div id="profile-row-two">
+    <div id="profile-page-text">
+      <h3>Your events:</h3><br>
+          {{#each currentUser.eventsCreated}}
+            <a href="/festival/{{_id}}">
+              <h3>{{name}}</h3>
+            </a>
+          {{/each}}
+    </div>
   </div>
-
-  {{!-- <a href="/profile/{{currentUser._id}}/edit" id="">Edit Profile</a> --}}
 </div>
+

@@ -349,8 +349,7 @@ footer {
   max-width: 700px;
 }
 
-#detail-page-img img,
-#profile-page-img img {
+#detail-page-img img {
   width: 100%;
   height: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -393,14 +392,27 @@ footer {
 #profile-page {
   /* border: #ADEB68 solid 1px; */
   justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#profile-row-one {
+  display: flex;
 }
 
 #profile-page-content a {
   color: #31333B;
 }
 
-#profile-page-img {
-  max-width: 300px;
+#profile-page-img-header {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+#profile-row-one img {
+  max-width: 400px;
+  max-height: 400px;
 }
 
 #profile-page-content {
@@ -594,6 +606,10 @@ label #close-menu {
     /* border: solid red 2px; */
     padding: 10px;
   }
+
+  #profile-page
+
+
 
 }
 
