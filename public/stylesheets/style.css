@@ -49,8 +49,16 @@ h1 {
 #links-navbar a,
 footer {
   font-size: 14px;
+  
 }
 
+#links-navbar a {
+  /* position: relative; */
+}
+
+#links-navbar a:before {
+  /* position: absolute; */
+}
 #logo-and-name {
   display: flex;
   align-items: center;
@@ -438,10 +446,15 @@ label #close-menu {
 }
 
 @media (max-width: 800px) {
+/* turning navbar into burger menu */
   label #menu-btn {
     display: block;
     float: right;
-    border: solid pink 1px;
+    /* border: solid pink 1px; */
+  }
+
+  #nav-bar {
+    display: block;
   }
 
   #links-navbar {
@@ -450,13 +463,32 @@ label #close-menu {
     height: 100vh;
     background-color: #31333B;
     top: 60px;
-    left: 0;
+    left: -100%;
+    transition: all .5s;
     text-align: center;
-    border: solid yellow 1px;
+    /* border: solid yellow 1px; */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    gap: 20px;
   }
 
   #links-navbar a {
     display: block;
-    border: solid red 1px;
+    /* border: solid red 1px; */
+  }
+
+  #check:checked ~ #links-navbar {
+    left: 0;
+  }
+
+  #check:checked ~ label #menu-btn {
+    display: none;
+  }
+
+  #check:checked ~ label #close-menu {
+    display: block;
   }
 }
+
+/* index page edit */
