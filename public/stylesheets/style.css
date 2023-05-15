@@ -398,6 +398,20 @@ footer {
 
 #profile-row-one {
   display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+#profile-row-one img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border:#ADEB68 solid 2px;
+}
+
+#profile-header-btns h1 {
+  padding-bottom: 20px;
 }
 
 #profile-page-content a {
@@ -410,10 +424,7 @@ footer {
   gap: 30px;
 }
 
-#profile-row-one img {
-  max-width: 400px;
-  max-height: 400px;
-}
+
 
 #profile-page-content {
   display: flex;
