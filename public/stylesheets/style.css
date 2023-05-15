@@ -590,5 +590,10 @@ label #close-menu {
     justify-content: center;
   }
 
+  #edit-page {
+    /* border: solid red 2px; */
+    padding: 10px;
+  }
+
 }
 
