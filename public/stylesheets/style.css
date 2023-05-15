@@ -169,6 +169,7 @@ footer {
     background-color: #31333B;
     color: #DFDFDF;
     position: fixed;
+    display: block;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -294,7 +295,6 @@ footer {
 .festival-card {
   background-color: #31333B;
   color: #DFDFDF;
-  width: 20vw;
   /* padding: 10px; */
   gap: 10px;
   max-width: 250px;
@@ -447,6 +447,10 @@ label #close-menu {
 }
 
 @media (max-width: 800px) {
+  body {
+    /* necessary to spot footer from hiding content */
+    margin-bottom: 50px;
+  }
 /* turning navbar into burger menu */
   label #menu-btn {
     display: block;
@@ -496,6 +500,7 @@ label #close-menu {
     margin-top: 10%;
     padding: 0px 20px;
     gap: 5px;
+    /* margin-bottom: 50px; */
   }
   #index-content-slides {
     flex-direction: column;
@@ -519,5 +524,45 @@ label #close-menu {
     height: 20px;
     align-items: center;
   }
+
+  /* adjusting create festival form */
+  #columns-container {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .all-fest-page {
+   /* border: solid 1px red; */
+  }
+
+  .all-fest-page h2 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  #all-festivals-box {
+    flex-direction: column !important;
+    flex-wrap: nowrap;
+    width: 90%;
+    /* border: solid yellow 2px; */
+  }
+
+  #table-container {
+    width: 90%;
+    /* border: solid green 3px; */
+    margin: 0 auto;
+    
+  }
+
+  .festival-card {
+    max-width:inherit;
+  }
+
+  .hidden-mobile {
+    display: none;
+  }
+
+
 }
 
