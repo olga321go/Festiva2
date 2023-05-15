@@ -392,46 +392,54 @@ footer {
 #profile-page {
   /* border: #ADEB68 solid 1px; */
   justify-content: center;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-#profile-row-one {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
-
-#profile-row-one img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 50%;
-  border:#ADEB68 solid 2px;
-}
-
-#profile-header-btns h1 {
+#profile-page h1 {
   padding-bottom: 20px;
+  display: block;
+  text-align: center;
 }
 
-#profile-page-content a {
+#profile-page a {
   color: #31333B;
 }
 
-#profile-page-img-header {
+#profile-page-content {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: #31333B solid 5px;
+  border-bottom: #31333B solid 5px;
+  gap: 20px;
+}
+
+#profile-page-img-btn {
+  /* border: solid yellow 2px; */
+}
+
+#profile-page-content img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5%;
+  /* border:#ADEB68 solid 2px; */
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#profile-page-text {
+  display: flex;
+  gap: 50px;
+}
+
+/* #profile-page-img-header {
   display: flex;
   flex-direction: column;
   gap: 30px;
-}
-
-
-
-#profile-page-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* border: solid green 1px; */
-}
+} */
 
 #profile-page-content a:hover {
   color: #31333B;
@@ -448,8 +456,13 @@ footer {
 
 #profile-page-buttons {
   display: flex;
+  flex-direction: column;
   /* border: red solid 1px; */
   gap: 10px;
+}
+
+#profile-page-buttons button {
+  width: 100%;
 }
 
 
@@ -504,6 +517,7 @@ label #close-menu {
   #links-navbar a {
     display: block;
     text-transform: uppercase;
+    font-size: 20px;
     /* border: solid red 1px; */
   }
 
@@ -618,7 +632,22 @@ label #close-menu {
     padding: 10px;
   }
 
-  #profile-page
+  #profile-page {
+    padding-top: 20px;
+  }
+
+  #profile-page h1 {
+    font-size: 40px;
+  }
+
+  #profile-page-text {
+    flex-direction: column;
+  }
+
+  #profile-page-img-btn img {
+    width: 150px;
+    height: 150px;
+  }
 
 
 
