@@ -489,6 +489,27 @@ label #close-menu {
   #check:checked ~ label #close-menu {
     display: block;
   }
+
+  /* index page edit */
+  .basic-container {
+    padding: 20px 20px;
+    gap: 5px;
+  }
+  #index-content-slides {
+    flex-direction: column;
+    border: solid red 1px;
+    /* padding-top: 50px; */
+  }
+
+  #index-content-slides h1 {
+    font-size: 28px;
+    padding-top: 20px;
+    padding-bottom: 0;
+  }
+
+  #index-content-slides p {
+    font-size: 16px;
+    border: solid red 1px;
+  }
 }
 
-/* index page edit */
