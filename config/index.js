@@ -41,10 +41,12 @@ module.exports = (app) => {
       saveUninitialized: true,
 
       cookie: {
-        sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
-        secure: process.env.NODE_ENV === "production",
+        //sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
+        //secure: process.env.NODE_ENV === "production",
+        sameSite: "lax",
+        secure: false,
         httpOnly: true,
-        maxAge: 1800000,  
+        maxAge: 1800000,
       },
     })
   );
