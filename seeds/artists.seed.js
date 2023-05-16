@@ -1,4 +1,5 @@
 const ArtistModel = require("../models/Artist.model");
+require("dotenv").config();
 
 // first thing when seeding is to connect to the DB
 require("../db");
@@ -66,7 +67,6 @@ const artists = [
   {
     name: "Elton John",
   },
- 
 ];
 
 // Add here the script that will be run to actually seed the database (feel free to refer to the previous lesson)
