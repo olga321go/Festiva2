@@ -3,34 +3,39 @@ const router = express.Router();
 const UserModel = require("../models/User.model");
 const bcryptjs = require("bcryptjs");
 const isLoggedOut = require("../middlewares/isLoggedOut");
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require("../config/cloudinary.config");
 
 // Route for Signup
 router.get("/signup", isLoggedOut, (req, res, next) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", fileUploader.single('profilePhoto'),async (req, res, next) => {
-  try {
-    const salt = await bcryptjs.genSalt(12);
-    console.log(salt);
+router.post(
+  "/signup",
+  fileUploader.single("profilePhoto"),
+  async (req, res, next) => {
+    try {
+      const salt = await bcryptjs.genSalt(12);
+      console.log(salt);
 
-    const hash = await bcryptjs.hash(req.body.password, salt);
-    console.log(hash);
+      const hash = await bcryptjs.hash(req.body.password, salt);
+      console.log(hash);
 
-    await UserModel.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: hash,
-      profilePhoto: req.file.path,
-      eventsCreated: req.body.eventsCreated,
-    });
-    res.redirect("/profile");
-  } catch (err) {
-    console.log("there was an error", err);
-    res.redirect("/profile");
+      const user = await UserModel.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: hash,
+        profilePhoto: req.file.path,
+        eventsCreated: req.body.eventsCreated,
+      });
+      req.session.user = { id: user._id };
+      res.redirect("/profile");
+    } catch (err) {
+      console.log("there was an error", err);
+      res.redirect("/profile");
+    }
   }
-});
+);
 
 //Route for Logout
 router.post("/logout", (req, res, next) => {
