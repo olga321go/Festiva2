@@ -83,6 +83,7 @@ footer {
 .basic-container {
   /* width: 500px;
   margin: 100px auto; */
+  top: 200px;
   display: flex;
   /* max-width: 500px; */
   /* align-self: center; */
