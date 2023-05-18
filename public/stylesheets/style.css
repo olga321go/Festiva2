@@ -98,7 +98,7 @@ footer {
   align-self: center;
   /* border: solid red 1px; */
   align-items: center ;
-  height: 70vh;
+  /* height: 70vh; */
 }
 
 #index-content-slides {
@@ -550,9 +550,10 @@ label #close-menu {
     gap: 5px;
     /* margin-bottom: 50px; */
   }
+
   #index-content-slides {
     flex-direction: column;
-    border: solid red 1px;
+    /* border: solid green 1px; */
     /* padding-top: 50px; */
   }
 
@@ -564,7 +565,7 @@ label #close-menu {
 
   #index-content-slides p {
     font-size: 16px;
-    border: solid red 1px;
+    /* border: solid red 1px; */
   }
 
   footer {
