@@ -1,30 +1,34 @@
 <div id="profile-page" class="basic-container">
-  <div id="profile-page-img">
-    <img src="{{currentUser.profilePhoto}}" alt="profile image" />
-  </div>
+  <h1>Welcome {{currentUser.username}}</h1>
   <div id="profile-page-content">
-    <div id="profile-page-text">
-      <h1>Welcome {{currentUser.username}}</h1><br />
-        <h3>Your events:</h3><br>
-          {{#each currentUser.eventsCreated}}
-            <a href="/festival/{{_id}}">
-              <h3>{{name}}</h3>
-            </a>
-          {{/each}}
-    </div>
-     <div id="profile-page-buttons">
+    <div id="profile-page-img-btn">
+      <img src="{{currentUser.profilePhoto}}" alt="profile image" />
+      <div id="profile-page-buttons">
           <form method="POST" action="/logout">
             <button type="submit" class="basic-btn">Log out</button>
           </form>
           <a href="/profile/{{currentUser._id}}/edit">
             <button class="basic-btn">Edit Profile</button>
           </a>
-     </div>
-  </div>
-  
-    
-   
-  </div>
+      </div>
 
-  {{!-- <a href="/profile/{{currentUser._id}}/edit" id="">Edit Profile</a> --}}
+    </div>
+    
+    
+    <div id="profile-page-text">
+      <div id="your-events">
+        <h3>Your events:</h3><br>
+              {{#each currentUser.eventsCreated}}
+                <a href="/festival/{{_id}}">
+                  <h3>{{name}}</h3>
+                </a>
+              {{/each}}
+      </div>
+      <div id="your-favs">
+        <h3>Your favourites:</h3><br>
+      </div>
+          
+    </div>
+  </div>
 </div>
+
