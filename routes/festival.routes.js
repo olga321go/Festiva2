@@ -77,6 +77,7 @@ router.get("/festival/:festivalID", async (req, res) => {
   const populatedLineup = await FestivalModel.findById(festivalID).populate(
     "lineup"
   );
+  console.log("populated lineup", populatedLineup);
   const parsedDate = currentFestival.date.toDateString();
   console.log("current festival", currentFestival);
   res.render("festival/festival-detail", {
