@@ -1,11 +1,12 @@
 const ArtistModel = require("../models/Artist.model");
+console.log(process.cwd());
 require("dotenv").config();
 
 // first thing when seeding is to connect to the DB
 require("../db");
 
 // To insert in "seeds/movies.seed.js"
-
+console.log(process.env.MONGODB_URI);
 const artists = [
   {
     name: "Ariana Grande",
