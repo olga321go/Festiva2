@@ -28,7 +28,10 @@ router.post(
         profilePhoto: req.file.path,
         eventsCreated: req.body.eventsCreated,
       });
-      req.session.user = { id: user._id };
+      req.session.user = {
+        email: user.email,
+        username: user.username,
+      };
       res.redirect("/profile");
     } catch (err) {
       console.log("there was an error", err);

@@ -16,6 +16,8 @@ router.get("/", (req, res, next) => {
 
 router.get("/profile", isLoggedIn, async (req, res) => {
   // const { userID } = req.session.user._id;
+  const sessionInfo = req.session;
+  console.log("sessionInfo", sessionInfo);
   const usersName = req.session.user.username;
   const currentUser = await UserModel.findOne({ username: usersName }).populate(
     "eventsCreated"
