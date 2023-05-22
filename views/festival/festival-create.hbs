@@ -33,9 +33,9 @@
           placeholder="date YYYY-MM-DD"
           /><br>
           <input type="text" 
-          name="location" 
+          name="lineup" 
           value="" 
-          placeholder="Location" /><br>
+          placeholder="Lineup" /><br>
           <input
           type="text"
           name="ticketPrice"
@@ -51,14 +51,14 @@
           value=""></textarea>
 
     </div>
-    <div id="column-two">
+    {{!-- <div id="column-two">
       <label for="lineup">Select your artists (hold ctrl and click):</label><br><br>
         <select name="lineup" multiple id="select-multiple-input" size="20">
           {{#each artists}}
             <option value={{_id}}>{{name}}</option>
           {{/each}}
         </select><br>
-    </div>
+    </div> --}}
   </div>
   <button type="submit" class="basic-btn" id="new-festival-btn">Create New Festival</button>
   </form>

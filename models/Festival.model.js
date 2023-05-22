@@ -26,8 +26,7 @@ const festivalSchema = new Schema(
       type: String,
       required: true,
     },
-    // ref: Reference to artist collection
-    lineup: [{ type: Schema.Types.ObjectId, ref: "artist" }],
+    lineup: [{ type: String, required: true}],
     // ref: Reference to user collection
     author: { type: Schema.Types.ObjectId, ref: "user" },
   },
