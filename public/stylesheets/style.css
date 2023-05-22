@@ -441,8 +441,12 @@ footer {
 }
 
 #profile-page-text {
+  position: relative;
   display: flex;
   gap: 50px;
+  border: solid green 1px;
+  display: block;
+  width: 100%;
 }
 
 /* #profile-page-img-header {
@@ -450,6 +454,15 @@ footer {
   flex-direction: column;
   gap: 30px;
 } */
+
+#addEventBtn {
+  /* display: block; */
+  
+  position: absolute;
+  left:0;
+  bottom:0;
+  width: fit-content;
+}
 
 #profile-page-content a:hover {
   color: #31333B;
