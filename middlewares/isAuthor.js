@@ -6,9 +6,9 @@ const isAuthor = async (req, res, next) => {
     const { festivalID } = req.params;
     const currentFestival = await FestivalModel.findById(festivalID);
     const authorID = currentFestival.author;
-    const currentAuthor = await UserModel.findById(authorID);
-    console.log("current author", currentAuthor);
-    const currentAuthorUsername = currentAuthor.username;
+    const eventsAuthor = await UserModel.findById(authorID);
+    console.log("current author", eventsAuthor);
+    const currentAuthorUsername = eventsAuthor.username;
 
     if (currentAuthorUsername === activeUsersName) {
       next();
