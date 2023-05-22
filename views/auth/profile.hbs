@@ -19,9 +19,22 @@
       <div id="your-events">
         <h3>Your events:</h3><br>
               {{#each currentUser.eventsCreated}}
-                <a href="/festival/{{_id}}">
-                  <h3>{{name}}</h3>
-                </a>
+                <div id="your-event-row">
+                  <a href="/festival/{{_id}}">
+                    <h3>{{name}}</h3>
+                  </a>
+                  <div id="delete-edit-buttons">
+                    <a href="/festival/{{_id}}/edit">
+                      <button><i class="bi bi-pencil-square"></i></button>
+                    </a>
+                    <form action="/festival/{{_id}}/delete" method="post">
+                      <button
+                        type="submit"
+                        id="delete-button"
+                      ><i class="bi bi-x-square-fill"></i></button>
+                    </form>
+                  </div>
+                </div>
               {{/each}}
         <a href="/festival/create" >
           <button id="addEventBtn" class="basic-btn">+ Add an event</button>

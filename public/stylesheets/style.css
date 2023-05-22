@@ -365,25 +365,6 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#delete-edit-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-#delete-button:hover {
-  background-color: #1a1919;
-  color: red;
-  text-shadow:
-      0 0 7px white,
-      0 0 10px white,
-      0 0 21px white,
-      0 0 42px red,
-      0 0 82px red,
-      0 0 92px red,
-      0 0 102px red,
-      0 0 151px red;
-}
-
 /* #edit-page {
   padding: 50px 100px;
 }
@@ -444,27 +425,43 @@ footer {
   position: relative;
   display: flex;
   gap: 50px;
-  border: solid green 1px;
+  /* border: solid green 1px; */
   display: block;
   width: 100%;
 }
 
-/* #profile-page-img-header {
+#your-event-row {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-} */
+  justify-content: space-between;
+}
+
+#delete-edit-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+#delete-edit-buttons button {
+  cursor: pointer;
+  font-weight: bold;
+  color:#1a1919;
+  background-color: white;
+  transition: transform 0.1s ease 0s;
+  border: none;
+  font-size: 20px;
+}
+
+
 
 #addEventBtn {
   /* display: block; */
-  
   position: absolute;
   left:0;
   bottom:0;
-  width: fit-content;
+  width: 100%;
 }
 
-#profile-page-content a:hover {
+#profile-page-content a:hover,
+#delete-edit-buttons button:hover {
   color: #31333B;
   text-shadow:
         0 0 7px #ADEB68,
@@ -475,6 +472,21 @@ footer {
         0 0 92px #ADEB68,
         0 0 102px #ADEB68,
         0 0 151px #ADEB68;
+}
+
+/* the other id overrides this one */
+#delete-button:hover {
+  background-color: #1a1919;
+  color: red;
+  text-shadow:
+      0 0 7px white,
+      0 0 10px white,
+      0 0 21px white,
+      0 0 42px red,
+      0 0 82px red,
+      0 0 92px red,
+      0 0 102px red,
+      0 0 151px red;
 }
 
 #profile-page-buttons {
@@ -650,10 +662,6 @@ label #close-menu {
 
   #detail-page-text h3 {
     font-size: 16px;
-  }
-
-  #delete-edit-buttons {
-    justify-content: center;
   }
 
   #edit-page {
