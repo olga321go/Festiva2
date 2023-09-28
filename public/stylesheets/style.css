@@ -45,11 +45,13 @@ h1 {
   background-color: #31333b;
   height: 60px;
   border-bottom: #adeb68 5px solid;
+  
 }
 
 #links-navbar a,
 footer {
-  font-size: 14px;
+  font-size: 18px;
+  padding-left: 2rem;
   
 }
 
@@ -141,16 +143,16 @@ footer {
     /* position: relative; */
     display: inline-block;
     text-align: center;
-    border-radius: 3px;
+    border-radius: 30px;
     border-width: 0px;
     transition: transform 0.1s ease 0s;
     background-color: #31333b;
     color: white;
-    padding: 5px 20px;
+    padding: 10px 30px;
   }
   
 .basic-btn:hover {
-    background-color: #1a1919;
+    background-color: #31333b;
     color: white;
     text-shadow:
         0 0 7px #DFDFDF,
